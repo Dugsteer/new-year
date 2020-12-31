@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.clickme {
+    position: absolute;
+    color:white;
+    font-family: Orbitron;
+    text-align: center;
+    opacity:1;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    cursor: pointer;
+}
+
+.vanisher {
+    opacity: 0;
+}
+
+.heading {
+    color: #fff;
+    font-family: Orbitron;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 4rem;
+    opacity:0;
+   
+}
+
+.headinganim {
+    animation: textappear 3s forwards;
+    animation-delay: 10s;
+}
+
+.bottomtext {
+    font-family: Orbitron;
+    color: #fff;
+    position: absolute;
+opacity: 0;
+    text-align: center;
+   left: 95px;
+    top: 460px;
+
+    
+}
+
+.bottomtextanim {
+    animation: textappear 3s forwards;
+    animation-delay: 15s;
+}
+
+@keyframes textappear {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.main {
+    position: relative;
+    height: 600px;
+    width: 400px;
+    background-image: url('img/background.png');
+}
+
+.ship {
+    position: absolute;
+    height: 200px;
+    left:80px;
+    top: 200px;
+    opacity: 0;
+}
+
+.ship img{
+    height:100%;
+}
+.roof {
+    position: absolute;
+    height: 70px;
+    top: 215px;
+    left:100px;
+    opacity:1;
+
+    z-index: 5;
+}
+
+.roofanim {
+    transform-origin: bottom right;
+    animation: openup 3s forwards;
+}
+
+.roof img{
+    height:100%;
+}
+
+@keyframes openup {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+.base {
+    position: absolute;
+    height: 140px;
+    top: 267px;
+    left:76px;
+    z-index: 5;
+}
+
+.base img{
+    height:100%;
+}
+.family {
+    position: absolute;
+    height: 160px;
+    top: 230px;
+    left:110px;
+    z-index: 1;
+   
+}
+
+.familyanim {
+    animation: familyrise 3s forwards;
+    animation-delay: 3s;
+}
+
+.family img{
+    height:100%;
+}
+
+@keyframes familyrise {
+    0% {
+        top: 230px;
+    }
+    100% {
+        top: 180px
+    }
+}
+
+.text {
+    position: absolute;
+    top: 450px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.star-wars {
+    /* Flexbox to center the entire element on the screen */
+    display: flex;
+    top: 500px;
+    justify-content: center;
+    /* This is a magic number based on the context in which this snippet is used and effects the perspective */
+    height: 300px;
+    /* This sets allows us to transform the text on a 3D plane, and is somewhat a magic number */
+    perspective: 400px;
+    /* The rest is totally up to personal styling preferences */
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 200%;
+    font-weight: 600;
+    letter-spacing: 4px;
+    line-height: 150%;
+    text-align: justify;
+  }
+
+  .crawl {
+    /* Position the element so we can adjust the top property in the animation */
+    position: relative;
+    /* Making sure the text is fully off the screen at the start and end of the animation */
+    top: 200px;
+    /* Defines the skew origin at the very center when we apply transforms on the animation */
+    transform-origin: 50% 100%;
+
+  }
+
+  .crawlanim {
+    animation: crawl 60s linear;
+    animation-delay: 6s;
+  }
+
+  @keyframes crawl {
+    0% {
+      /* The element starts below the screen */
+      top: 0;
+      /* Rotate the text 20 degrees but keep it close to the viewer */
+      transform: rotateX(20deg) translateZ(0);
+    }
+    100% { 
+      /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
+      top: -6000px;
+      /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+  }
